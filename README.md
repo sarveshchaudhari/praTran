@@ -5,7 +5,7 @@ This project delivers a **Neural Machine Translation (NMT)** system for converti
 <div align="center" style="padding: 20px; background-color: #FFF8E1; border-radius: 15px;">
 
 <a href="https://huggingface.co/spaces/sarch7040/praTran" target="_blank" style="text-decoration: none;">
-    <img src="https://img.shields.io/badge/praTran-Explore%20Translation%20Model%20🌐-FF9933?style=for-the-badge&logo=Hugging%20Face&logoColor=white" alt="Visit praTran Website" style="border-radius: 12px; font-size: 1.2em;">
+    <img src="https://img.shields.io/badge/praTran-Explore%20Translation%20Model%20🌐-FF9933?style=for-the-badge&logo=Hugging%20Face&logoColor=white&labelColor=FF9933&label=Spaces" alt="Visit praTran Website" style="border-radius: 50px; font-size: 1.5em; padding: 15px;">
 </a>
 
 </div>
