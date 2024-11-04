@@ -1,14 +1,6 @@
 # Maharashtri Prakrit to English Neural Machine Translation
 
----
-
-<div align="center">
-
-**🌐 [Explore the Maharashtri Prakrit to English Translation Model Here!](YOUR_DEPLOYED_MODEL_LINK) 🌐**
-
-</div>
-
----
+<div align="center"> <a href="https://huggingface.co/spaces/sarch7040/praTran" target="_blank" style="text-decoration:none;"> <img src="https://img.shields.io/badge/🌐-Explore%20the%20Model%20Online-2E8B57?style=for-the-badge" alt="Deployed Model Link"> </a> </div>
 
 This project implements a Neural Machine Translation (NMT) system for translating Maharashtri Prakrit, an ancient Indo-Aryan language, to English. The project uses a Flask web interface and a pre-trained model fine-tuned for this low-resource language.
 
