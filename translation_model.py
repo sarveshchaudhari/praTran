@@ -3,7 +3,8 @@ from transformers import pipeline
 
 # Load the translation model at the start to avoid reloading on each request
 start_time = time.time()
-pipe = pipeline("text2text-generation", model="model")
+
+pipe = pipeline("text2text-generation", model="sarch7040/praTranv2")
 print(f"Model loaded in {time.time() - start_time} seconds")
 
 def translate(input_text):

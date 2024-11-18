@@ -1,25 +1,21 @@
-FROM python:3.10-slim-bullseye
+# Use an official lightweight Python image
+FROM python:3.9-slim
 
+# Set a working directory
 WORKDIR /app
 
-COPY . /app/
+# Define a writable cache directory
+ENV HF_HOME=/tmp/.cache
 
-# Upgrade pip
-RUN pip install --upgrade pip
+# Copy requirements.txt and install dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Install system dependencies for scientific libraries
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    cmake \
-    libopenblas-dev \
-    liblapack-dev \
-    libjpeg-dev \
-    zlib1g-dev \
-    && rm -rf /var/lib/apt/lists/*
+# Copy the rest of the application files
+COPY . .
 
-# Install Python dependencies
-RUN pip install torch torchvision numpy scipy pandas matplotlib scikit-learn flask transformers
+# Expose the port Flask will run on
+EXPOSE 7860
 
-EXPOSE 3000
-
-CMD ["python", "./app.py"]
+# Run Flask on the correct host and port
+CMD ["flask", "run", "--host", "0.0.0.0", "--port", "7860"]

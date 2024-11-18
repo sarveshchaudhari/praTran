@@ -17,4 +17,5 @@ def translate_text():
     return render_template('index.html', original_text=input_text, translated_text=translated_text, time_taken=translation_time)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=7860)
+
