@@ -1,55 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Prakrit to English Translation</title>
-    <link rel="stylesheet" href="/static/styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
     <div class="container">
-        <header>
-            <h1>Maharashtri Prakrit to English Translator</h1>
-        </header>
-        <main>
-            <form action="/translate" method="POST" id="translation-form">
-                <div class="form-group">
-                    <label for="prakrit_text">Enter Prakrit Sentence:</label>
-                    <textarea name="prakrit_text" id="prakrit_text" rows="4" required></textarea>
-                </div>
-                <button type="submit" class="translate-btn" id="translate-btn">
-                    <span id="btn-text">Translate</span>
-                    <span id="loading-spinner" class="spinner hidden"></span>
-                </button>
-            </form>
+      <header>
+        <h1>𑀧𑁆𑀭𑀸𑀝𑁆𑀭𑀸𑀦/प्राट्रान/praTran</h1>
+      </header>
+      <main>
+        <form action="/translate" method="POST" id="translation-form">
+          <div class="form-group">
+            <label for="prakrit_text">Enter Prakrit Sentence:</label>
+            <textarea
+              name="prakrit_text"
+              id="prakrit_text"
+              rows="4"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="translate-btn" id="translate-btn">
+            <span id="btn-text">Translate</span>
+            <span id="loading-spinner" class="spinner hidden"></span>
+          </button>
+        </form>
 
-            {% if original_text %}
-            <section class="translation-result">
-                <h2>Prakrit Text:</h2>
-                <p>{{ original_text }}</p>
+        {% if original_text %}
+        <section class="translation-result">
+          <h2>Prakrit Text:</h2>
+          <p>{{ original_text }}</p>
 
-                <h2>Translated English Text:</h2>
-                <p>{{ translated_text }}</p>
+          <h2>Translated English Text:</h2>
+          <p>{{ translated_text }}</p>
 
-                <h3>Translation Time: {{ time_taken }} seconds</h3>
-            </section>
-            {% endif %}
-        </main>
+          <h3>Translation Time: {{ time_taken }} seconds</h3>
+        </section>
+        {% endif %}
+      </main>
     </div>
 
     <script>
-        // Add event listener to the form
-        document.getElementById('translation-form').addEventListener('submit', function() {
-            // Show loading spinner
-            document.getElementById('loading-spinner').classList.remove('hidden');
-            // Change button text to 'Translating...'
-            document.getElementById('btn-text').textContent = 'Translating...';
-            // Disable the button to prevent multiple submissions
-            document.getElementById('translate-btn').setAttribute('disabled', 'true');
+      // Add event listener to the form
+      document
+        .getElementById("translation-form")
+        .addEventListener("submit", function () {
+          // Show loading spinner
+          document.getElementById("loading-spinner").classList.remove("hidden");
+          // Change button text to 'Translating...'
+          document.getElementById("btn-text").textContent = "Translating...";
+          // Disable the button to prevent multiple submissions
+          document
+            .getElementById("translate-btn")
+            .setAttribute("disabled", "true");
         });
 
-        // Assuming that after the translation, the page reloads with new content.
-        // You can customize this based on your specific backend process (AJAX, etc.)
+      // Assuming that after the translation, the page reloads with new content.
+      // You can customize this based on your specific backend process (AJAX, etc.)
     </script>
-</body>
+  </body>
 </html>
